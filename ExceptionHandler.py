@@ -31,7 +31,7 @@ class ExceptionHandler:
         except ValueError:
             # Prompt the user again for a valid entry.
             print(error_message)
-            user_input = cls.query_options(query, error_message, options)
+            user_input = cls.query_options(query, error_message, options, ignore_case)
 
         return user_input
 
@@ -44,7 +44,7 @@ class ExceptionHandler:
         user_input = input(query)
 
         try:
-            # Raises a ValueError if user_input cannot be recast as integer.
+            # Raises a ValueError if user_input cannot be recast as integer type.
             if not user_input.isdigit():
                 raise ValueError
 
