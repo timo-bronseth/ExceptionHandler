@@ -1,7 +1,14 @@
-from ExceptionHandler import ExceptionHandler
+"""
+Demonstrates the usage of the ExceptionHandler class.
+
+Timo Brønseth, January 2020.
+"""
 
 
-def feed_the_AI():
+from exception_handler import ExceptionHandler
+
+
+def feed_the_ai():
     """
     Ask for user input via the ExceptionHandler method.
     """
@@ -26,4 +33,4 @@ def feed_the_AI():
 
 
 if __name__ == "__main__":
-    feed_the_AI()
+    feed_the_ai()

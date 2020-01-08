@@ -1,6 +1,9 @@
-# -------------------------------------------------------------------------------------
-# Timo Brønseth, January 2020.
-# -------------------------------------------------------------------------------------
+"""
+Contains classes pertaining to handling exceptions. Lets you abstract out
+exception handling in your main code, improving its concision and readability.
+
+Timo Brønseth, January 2020.
+"""
 
 
 class ExceptionHandler:
@@ -9,7 +12,12 @@ class ExceptionHandler:
     """
 
     @classmethod
-    def query_options(cls, query: str, error_message: str, options: list, ignore_case: bool = False) -> str:
+    def query_options(cls,
+                      query: str,
+                      error_message: str,
+                      options: list,
+                      ignore_case: bool = False
+                      ) -> str:
         """
         Queries the user for input, recursively calls itself until
         user has entered in one of the values defined in options.
@@ -18,7 +26,8 @@ class ExceptionHandler:
         user_input = input(query)
 
         if ignore_case:
-            # Make both user_input and options lower case, so that they're being compared in same case.
+            # Make both user_input and options lower case,
+            # so that they're being compared in same case.
             user_input = user_input.lower()
             for i, option in enumerate(options):
                 options[i] = option.lower()
@@ -29,7 +38,8 @@ class ExceptionHandler:
                 raise ValueError
 
         except ValueError:
-            # Prompt the user again for a valid entry.
+            # Function recursively calls itself if there's a ValueError,
+            # and prompts the user again for a valid entry.
             print(error_message)
             user_input = cls.query_options(query, error_message, options, ignore_case)
 
@@ -49,7 +59,8 @@ class ExceptionHandler:
                 raise ValueError
 
         except ValueError:
-            # Prompt the user again for a valid entry.
+            # Function recursively calls itself if there's a ValueError,
+            # and prompts the user again for a valid entry.
             print(error_message)
             user_input = cls.query_int(query, error_message)
 
