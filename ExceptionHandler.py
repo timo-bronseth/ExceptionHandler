@@ -5,7 +5,7 @@
 
 class ExceptionHandler:
     """
-    Handles errors arising from queries to the user.
+    Lets you define and handle errors arising from user input queries in a much more concise way.
     """
 
     @classmethod
