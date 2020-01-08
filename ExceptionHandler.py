@@ -5,7 +5,7 @@
 
 class ExceptionHandler:
     """
-    Lets you define and handle errors arising from user input queries in a much more concise way.
+    Lets you define and handle erroneous user inputs in a much more concise way.
     """
 
     @classmethod
@@ -18,6 +18,8 @@ class ExceptionHandler:
         user_input = input(query)
 
         if ignore_case:
+            # Make both user_input and options lower case,
+            # so that they're being compared in same case.
             user_input = user_input.lower()
             for i, option in enumerate(options):
                 options[i] = option.lower()
