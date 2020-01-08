@@ -13,7 +13,7 @@ def feed_the_AI():
         options=["green tea", "herbal tea"],
         ignore_case=True)
 
-    print("\n-AI enjoys a cup of {}-".format(user_input),
+    print(f"\n-AI enjoys a cup of {user_input}-",
           "\nThanks, human!")
 
     # AI requests integer, any integer.

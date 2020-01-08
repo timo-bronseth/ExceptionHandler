@@ -11,8 +11,8 @@ class ExceptionHandler:
     @classmethod
     def query_options(cls, query: str, error_message: str, options: list, ignore_case: bool = False) -> str:
         """
-        Queries the user for input, and recursively calls itself
-        until user has entered in one of the values defined in options.
+        Queries the user for input, recursively calls itself until
+        user has entered in one of the values defined in options.
         """
 
         user_input = input(query)
@@ -23,8 +23,7 @@ class ExceptionHandler:
                 options[i] = option.lower()
 
         try:
-            # Check if user_input points to either of the options, and recursively
-            # call the function until user_input matches one of them.
+            # Raise a ValueError if user_input
             if user_input not in options:
                 raise ValueError
 
