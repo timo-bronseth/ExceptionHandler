@@ -18,14 +18,13 @@ class ExceptionHandler:
         user_input = input(query)
 
         if ignore_case:
-            # Make both user_input and options lower case,
-            # so that they're being compared in same case.
+            # Make both user_input and options lower case, so that they're being compared in same case.
             user_input = user_input.lower()
             for i, option in enumerate(options):
                 options[i] = option.lower()
 
         try:
-            # Raise a ValueError if user_input
+            # Raise a ValueError if user_input does not match any of the items in options.
             if user_input not in options:
                 raise ValueError
 
