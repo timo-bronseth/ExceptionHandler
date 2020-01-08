@@ -53,24 +53,3 @@ class ExceptionHandler:
             user_input = cls.query_int(query, error_message)
 
         return user_input
-
-    @classmethod
-    def query_str(cls, query: str, error_message: str) -> str:
-        """
-        Queries the user for a non-integer value, and recursively
-        calls itself until user has successfully entered such.
-        """
-
-        user_input = input(query)
-
-        try:
-            # Raises a ValueError if user_input CAN be recast as integer.
-            if user_input.isdigit():
-                raise ValueError
-
-        except ValueError:
-            # Prompt the user again for a valid entry.
-            print(error_message)
-            user_input = cls.query_str(query, error_message)
-
-        return user_input
