@@ -3,14 +3,14 @@ from ExceptionHandler import ExceptionHandler
 
 def feed_the_AI():
     """
-    Ask for user input via the ErrorHandling method.
+    Ask for user input via the ExceptionHandler method.
     """
 
     # AI requests tea, but has a sense of proper taste.
     user_input = ExceptionHandler.query_options(
         query="\nPlease feed me 'green tea' or 'herbal tea': ",
         error_message="\nYuck! That's not what I wanted!",
-        options=["green tea", "herbal tea"],
+        options=['green tea', 'herbal tea'],
         ignore_case=True)
 
     print(f"\n-AI enjoys a cup of {user_input}-",
