@@ -1,10 +1,8 @@
 """
-Demonstrates the usage of the ExceptionHandler class.
+Contains demonstrations of how to utilise the ExceptionHandler class.
 
 Timo Brønseth, January 2020.
 """
-
-
 from exception_handler import ExceptionHandler
 
 
